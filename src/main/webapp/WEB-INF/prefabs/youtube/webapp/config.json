@@ -1,0 +1,36 @@
+{
+    "group": "media",
+    "templateUrl": "/pages/Main/Main.html",
+    "controllerUrl": "/pages/Main/Main.js",
+    "variablesUrl": "/pages/Main/Main.variables.json",
+    "iconUrl": "/resources/images/imagelists/prefab-icon.png",
+    "resources": {
+        "styles":[],
+        "scripts":[]
+    },
+    "properties": {
+        "youtubeurl": {
+            "type": "string",
+            "value": "http://www.youtube.com/embed/N1umLw5I3As",
+            "bindable": "in-out-bound",
+            "displayName" : "Youtube URL",
+            "helpText" : "This property defines the youtube video link url attribute for the youtube prefab. This url specifies the location where the video can be found."
+        },
+        "width": {
+            "type": "string",
+            "value": "640",
+            "displayName" : "Width"
+        },
+        "height": {
+            "type": "string",
+            "value": "360",
+            "displayName" : "Height"
+        },
+        "allowfullscreen": {
+            "type": "boolean",
+            "value": true,
+            "displayName" : "Allow Full Screen",
+            "helpText"   : "This property defines whether the video to be displayed in full screen"
+        }
+    }
+}

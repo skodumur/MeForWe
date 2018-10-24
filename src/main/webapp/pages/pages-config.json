@@ -1,0 +1,68 @@
+[ {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "DUmmy",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Dashboard",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "DummyMummy",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "OrgInfo",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "orgid",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "OrgList",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "campaign",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "contact",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "eventInfo",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+} ]

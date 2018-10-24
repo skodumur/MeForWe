@@ -1,0 +1,73 @@
+<wm-page data-ng-controller="OrgListPageController" pagetitle="Org List" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1" padding="unset 10%"> 
+            <wm-table name="OrgsTable2" title="Orgs List" dataset="bind:Variables.MeforweOrgsData1.dataSet" navigation="Basic" filtermode="search" show="false"> 
+                <wm-table-column binding="orgId" caption="Org Id" width="50px" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column> 
+                <wm-table-column binding="orgName" caption="Org Name" widget-type="anchor" width="150px" col-class="boldFont" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"> 
+                    <wm-anchor caption="{{row.getProperty('orgName')}}" on-click="Actions.goToPage_OrgInfo.invoke()" hyperlink="" class="" data-ng-class=""></wm-anchor> 
+                </wm-table-column> 
+                <wm-table-column binding="orgDesc" caption="Org Desc" width="500px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="orgType" caption="Org Type" width="200px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="orgAddress" caption="Org Address" width="200px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="orgPhone" caption="Org Phone" width="80px" edit-widget-type="number" type="big_integer" generator="assigned" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="zipCode" caption="Zip Code" primary-key="false" edit-widget-type="number" type="integer" generator="assigned" show="false" readonly="false"></wm-table-column> 
+            </wm-table> 
+            <wm-layoutgrid name="layoutgrid1"> 
+                <wm-gridrow name="gridrow1"> 
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn1"> 
+                        <wm-layoutgrid name="layoutgrid2"> 
+                            <wm-gridrow name="gridrow3"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn5"> 
+                                    <wm-search name="search1" dataset="bind:Variables.MeforweOrgsData.dataSet" searchkey="orgAddress,orgDesc,orgName,orgType,zipCode" displaylabel="orgName" datafield="orgId" class="input-group-lg"></wm-search> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow4"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn7"> 
+                                    <wm-label padding="unset 0.5em" name="label4" caption="Categories" fontsize="20" margin="20px unset unset unset"></wm-label> 
+                                    <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" name="OrgsList1_1" dataset="bind:Variables.MeforweOrgsData1.dataSet" navigation="None" padding="20px unset unset unset" show="false"> 
+                                        <wm-listtemplate layout="inline" name="listtemplate2"> 
+                                            <wm-container class="media-left" name="container5"></wm-container> 
+                                            <wm-container class="media-body" name="container6"> 
+                                                <wm-label class="p media-heading cursor-pointer" name="Name" caption="bind:Variables.MeforweOrgsData1.dataSet.data[$i].orgType || &quot;All&quot;" fontunit="px" padding="unset unset unset 1.25em" fontsize="18"></wm-label> 
+                                            </wm-container> 
+                                        </wm-listtemplate> 
+                                    </wm-list> 
+                                    <wm-list listclass="list-group" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" name="executeDistinct_typesList1" dataset="bind:Variables.MeforweExecuteDistinct_types.dataSet" padding="20px unset unset unset" navigation="None"> 
+                                        <wm-label padding="unset 0.5em" name="label6" caption="Show All" textalign="right" class="text-right cursor-pointer" on-click="label6Click($event, $scope)" margin="unset unset unset 25px" fontsize="18"></wm-label> 
+                                        <wm-listtemplate layout="inline" name="listtemplate3"> 
+                                            <wm-container class="media-left" name="container6_1"></wm-container> 
+                                            <wm-container class="media-body" name="container7"> 
+                                                <wm-label class="p media-heading cursor-pointer" name="Name" caption="bind:Variables.MeforweExecuteDistinct_types.dataSet.orgType" fontunit="px" padding="unset unset unset 1.25em" fontsize="18"></wm-label> 
+                                            </wm-container> 
+                                        </wm-listtemplate> 
+                                    </wm-list> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="9" name="gridcolumn2"> 
+                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="OrgsList1" dataset="bind:Variables.MeforweOrgsData.dataSet" navigation="Basic" showrecordcount="false" disableitem="false" multiselect="false"> 
+                            <wm-listtemplate layout="inline" name="listtemplate1"> 
+                                <wm-container name="pictureContainer" class="media-left"> 
+                                    <wm-picture width="80pt" height="80pt" name="Picture" shape="circle" picturesource="bind:Variables.MeforweOrgsData.dataSet.data[$i].smallIcon" class="media-object"></wm-picture> 
+                                </wm-container> 
+                                <wm-container class="media-body" padding="unset unset unset 1.25em" name="container2"> 
+                                    <wm-label name="Name" class="media-heading pull-left" caption="bind:Variables.MeforweOrgsData.dataSet.orgName" fontunit="px" fontsize="25" color="#333"></wm-label> 
+                                    <wm-anchor name="anchor1" class="pull-right" margin="0px unset unset unset" fontsize="15" hyperlink="bind:Variables.MeforweOrgsData.dataSet.data[$i].orgLink" caption="bind:Variables.MeforweOrgsData.dataSet.data[$i].orgLink"></wm-anchor> 
+                                    <wm-label caption="bind:Variables.MeforweOrgsData.dataSet.orgType" class="h5" margin="0px unset unset unset" name="JobTitle" fontsize="18" color="#8e969d"></wm-label> 
+                                    <wm-rating name="rating1" datavalue="bind:Variables.MeforweOrgsData.dataSet.data[$i].rating" iconcolor="#ff981A"></wm-rating> 
+                                </wm-container> 
+                                <wm-container class="media-right" name="container3" on-click="Actions.goToPage_OrgInfo.invoke()"> 
+                                    <wm-icon name="icon1" iconclass="wi wi-keyboard-arrow-right fa-3x" opacity="0.4" class="cursor-pointer"></wm-icon> 
+                                </wm-container> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>

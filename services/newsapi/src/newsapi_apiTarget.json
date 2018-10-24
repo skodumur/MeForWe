@@ -1,0 +1,122 @@
+{
+  "basePath" : "${rest.newsapi.basepath}",
+  "paths" : {
+    "/everything" : {
+      "x-WM-BASE_PATH" : "/everything",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "operationId" : "newsapi_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "q",
+          "format" : "string",
+          "description" : "q",
+          "type" : "string",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "apiKey",
+          "format" : "string",
+          "description" : "apiKey",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.newsapi.scheme}://${rest.newsapi.host}${rest.newsapi.basepath}/everything"
+    }
+  },
+  "host" : "${rest.newsapi.host}",
+  "schemes" : [ "${rest.newsapi.scheme}" ],
+  "definitions" : {
+    "source" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "newsapi.source",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "id", "name" ],
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "articlesEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "newsapi.articlesEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "author", "description", "publishedAt", "source", "title", "url", "urlToImage" ],
+      "properties" : {
+        "publishedAt" : {
+          "type" : "string"
+        },
+        "author" : {
+          "type" : "string"
+        },
+        "urlToImage" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "source" : {
+          "$ref" : "#/definitions/source"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "newsapi.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "articles", "status", "totalResults" ],
+      "properties" : {
+        "totalResults" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "articles" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/articlesEntryItem"
+          }
+        },
+        "status" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "de507a77-ad53-4332-954c-4e77aba69d29",
+    "x-WM-SERVICE_ID" : "newsapi2",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

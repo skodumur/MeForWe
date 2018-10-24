@@ -1,0 +1,4 @@
+.media-body .text-muted{
+    height:50px;
+    text-overflow: ellipsis;
+}

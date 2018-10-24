@@ -1,0 +1,52 @@
+{
+  "username" : "{WM_CLOUD_MYSQL_USER_NAME}",
+  "password" : "{WM_CLOUD_MYSQL_PASSWORD}",
+  "url" : "jdbc:mysql://{WM_CLOUD_MYSQL_HOST}/meforwe?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&createDatabaseIfNotExist=true",
+  "driverClass" : "com.mysql.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "meforwe",
+  "packageName" : "com.meforwe.meforwe",
+  "dbType" : "MySQL",
+  "host" : "{WM_CLOUD_MYSQL_HOST}",
+  "dbName" : "meforwe",
+  "port" : "",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "CAMPAIGNS",
+    "schema" : null
+  }, {
+    "table" : "DONATIONS",
+    "schema" : null
+  }, {
+    "table" : "EVENTS",
+    "schema" : null
+  }, {
+    "table" : "ORGS",
+    "schema" : null
+  }, {
+    "table" : "ORG_LOCATIONS",
+    "schema" : null
+  }, {
+    "table" : "RATINGS",
+    "schema" : null
+  }, {
+    "table" : "USERS",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "update",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null
+  },
+  "readOnly" : false
+}

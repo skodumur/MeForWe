@@ -1,0 +1,83 @@
+<wm-page data-ng-controller="OrgInfoPageController" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1"> 
+            <wm-layoutgrid name="layoutgrid1" padding="2em 0em"> 
+                <wm-gridrow name="gridrow11"> 
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn16"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow1"> 
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn1"> 
+                        <wm-picture name="picture2" width="100%" backgroundrepeat="no-repeat" picturesource="bind:Variables.infoVar.firstRecord.imageLink"></wm-picture> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn2"> 
+                        <wm-layoutgrid name="layoutgrid2" padding="0em 2em"> 
+                            <wm-gridrow name="gridrow4"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn9_1"> 
+                                    <wm-label name="label1" caption="bind:Variables.infoVar.firstRecord.orgName" class="h1" margin="unset 0em .25em 0em"></wm-label> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow5"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn12"> 
+                                    <wm-anchor name="anchor1" display="inline" caption="Website link" textdecoration="underline" margin="0em 0em 0em .5em" hyperlink="bind:Variables.infoVar.dataSet.data[$i].orgLink"></wm-anchor> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow6"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn15"> 
+                                    <wm-rating name="rating1" fontsize="2" fontunit="em" datavalue="4"></wm-rating> 
+                                    <wm-label padding="unset 0.5em" name="label4" caption="" class="cursor-pointer"></wm-label> 
+                                    <wm-anchor margin="unset 0.5em" name="anchor2" caption="Read all reviews" fontsize="15"></wm-anchor> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow8"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn13"> 
+                                    <wm-label name="label3" class="h1" caption="1000+ volunteers" margin="0em"></wm-label> 
+                                    <wm-button class="btn-default" caption="Donate now" type="button" margin="unset 0.5em" name="button1"></wm-button> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow12_1"></wm-gridrow> 
+                        </wm-layoutgrid> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow3"> 
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn7" padding="1em .5em"> 
+                        <wm-tabs name="tabs1"> 
+                            <wm-tabpane name="tabpane1" heading="Description" title="Description"> 
+                                <wm-composite name="composite1"> 
+                                    <wm-label class="col-md-3" name="label3_1" caption="bind:Variables.infoVar.dataSet.data[$i].orgDesc" width="100%" fontsize="20"></wm-label> 
+                                </wm-composite> 
+                                <wm-prefab prefabname="youtube" name="youtube2" class="place-center" youtubeurl="bind:Variables.infoVar.dataSet.data[$i].utube"></wm-prefab> 
+                            </wm-tabpane> 
+                            <wm-tabpane name="tabpane2" heading="Specifications" title="About"> 
+                                <wm-layoutgrid name="layoutgrid3"> 
+                                    <wm-gridrow name="gridrow10"> 
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn10"> 
+                                            <wm-label padding=".5em 0.5em" name="label5" caption="Mission Statement" fontsize="18" fontweight="bold"></wm-label> 
+                                        </wm-gridcolumn> 
+                                        <wm-gridcolumn columnwidth="10" name="gridcolumn11"> 
+                                            <wm-label padding=".5em 0.5em" name="label6" caption="The American Red Cross prevents and alleviates human suffering in the face of emergencies by mobilizing the power of volunteers and the generosity of donors.​" fontsize="16"></wm-label> 
+                                        </wm-gridcolumn> 
+                                    </wm-gridrow> 
+                                    <wm-gridrow name="gridrow11_1"> 
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn12_1"> 
+                                            <wm-label padding=".5em 0.5em" name="label7" caption="Vision Statement" fontsize="18" fontweight="bold"></wm-label> 
+                                        </wm-gridcolumn> 
+                                        <wm-gridcolumn columnwidth="10" name="gridcolumn13_1"> 
+                                            <wm-label padding=".5em 0.5em" name="label8" caption="The American Red Cross, through its strong network of volunteers, donors and partners, is always there in times of need. We aspire to turn compassion into action so that all people affected by disaster across the country  would receive shelter" fontsize="16"></wm-label> 
+                                        </wm-gridcolumn> 
+                                    </wm-gridrow> 
+                                </wm-layoutgrid> 
+                            </wm-tabpane> 
+                            <wm-tabpane name="tabpane3" heading="Comparison" title="Events"></wm-tabpane> 
+                        </wm-tabs> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow13"> 
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn19" padding="1em .5em"></wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>

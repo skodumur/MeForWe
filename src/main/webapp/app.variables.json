@@ -1,0 +1,134 @@
+{
+  "appNotification" : {
+    "_id" : "wm-appErrorHandler-wm.NotificationVariable-1454664620943",
+    "name" : "appNotification",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "list"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "list"
+    } ],
+    "operation" : "toast"
+  },
+  "goToPage_campaign" : {
+    "_id" : "wm-goToPage_campaign-wm.NavigationVariable-1515896891904",
+    "name" : "goToPage_campaign",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "campaign",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_contact" : {
+    "_id" : "wm-goToPage_contact-wm.NavigationVariable-1515913010116",
+    "name" : "goToPage_contact",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "contact",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Dashboard" : {
+    "_id" : "wm-goToPage_Dashboard-wm.NavigationVariable-1515870266105",
+    "name" : "goToPage_Dashboard",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Dashboard",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_DUmmy" : {
+    "_id" : "wm-goToPage_DUmmy-wm.NavigationVariable-1515884832916",
+    "name" : "goToPage_DUmmy",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "DUmmy",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_DummyMummy" : {
+    "_id" : "wm-goToPage_DummyMummy-wm.NavigationVariable-1515899823547",
+    "name" : "goToPage_DummyMummy",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "DummyMummy",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_eventInfo" : {
+    "_id" : "wm-goToPage_eventInfo-wm.NavigationVariable-1515890601771",
+    "name" : "goToPage_eventInfo",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "eventInfo",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Main" : {
+    "_id" : "wm-wm.NavigationVariable1389180517517",
+    "name" : "goToPage_Main",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "operation" : "gotoPage",
+    "pageName" : "Main"
+  },
+  "goToPage_OrgInfo" : {
+    "_id" : "wm-goToPage_OrgInfo-wm.NavigationVariable-1515872118480",
+    "name" : "goToPage_OrgInfo",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "OrgInfo",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "OrgInfo",
+    "dataSet" : [ {
+      "type" : "integer",
+      "target" : "orgid",
+      "value" : "bind:Widgets.OrgsList1.selecteditem.orgId"
+    } ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_OrgList" : {
+    "_id" : "wm-goToPage_OrgList-wm.NavigationVariable-1515872730541",
+    "name" : "goToPage_OrgList",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "OrgList",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

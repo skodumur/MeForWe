@@ -1,0 +1,29 @@
+<wm-partial data-ng-controller="topnavPageController" name="topnav" type="topnav"> 
+    <wm-navbar name="navbar1"> 
+        <wm-nav name="Events" type="navbar" class="navbar-left"> 
+            <wm-nav-item name="list_home"> 
+                <wm-anchor caption="Home" name="homeLink" iconclass="wi wi-home" on-click="Actions.goToPage_Dashboard.invoke()" fontsize="16"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="list_services"> 
+                <wm-anchor caption="Organizations" name="orderLink" iconclass="wi wi-group" on-click="Actions.goToPage_OrgList.invoke()" fontsize="16"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="nav_item7"> 
+                <wm-anchor name="anchor5" iconclass="wi wi-event" caption="Events" on-click="Actions.goToPage_eventInfo.invoke()" fontsize="16"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="nav_item6"> 
+                <wm-anchor name="anchor6" iconclass="wi wi-globe" caption="Campaigns" on-click="Actions.goToPage_campaign.invoke()" fontsize="16"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="nav_item7_1"> 
+                <wm-anchor name="anchor8" iconclass="wi wi-perm-contact-calendar fa-lg" fontsize="16" caption="Contact us" on-click="Actions.goToPage_contact.invoke()"></wm-anchor> 
+            </wm-nav-item> 
+        </wm-nav> 
+        <wm-nav name="rightTopLinks" type="navbar" class="navbar-right"> 
+            <wm-nav-item name="list_help"> 
+                <wm-anchor caption="Help" name="helpLink" iconclass="wi wi-help-outline" fontsize="16"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="list_logout"> 
+                <wm-anchor caption="Logout" name="logoutLink" iconclass="wi wi-sign-out" on-click="Actions.logoutAction.invoke()" fontsize="16"></wm-anchor> 
+            </wm-nav-item> 
+        </wm-nav> 
+    </wm-navbar> 
+</wm-partial>

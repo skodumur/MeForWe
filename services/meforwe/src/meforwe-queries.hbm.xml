@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="mapFilter">
+        <![CDATA[
+        select * from EVENTS where DATE(EVENT_DATE) = DATE(:dt) AND ZIP_CODE=:zc
+        ]]>
+    <query-param name="dt" type="java.time.LocalDateTime"/>
+    <query-param name="zc" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="mapFilter__count">
+        <![CDATA[
+        select count(*) from (select * from EVENTS where DATE(EVENT_DATE) = DATE(:dt) AND ZIP_CODE=:zc) wmTempTable
+        ]]>
+    <query-param name="dt" type="java.time.LocalDateTime"/>
+    <query-param name="zc" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="distinct_types">
+        <![CDATA[
+        select distinct(ORG_TYPE) from ORGS
+        ]]>
+    </sql-query>
+
+    <sql-query name="distinct_types__count">
+        <![CDATA[
+        select count(*) from (select distinct(ORG_TYPE) from ORGS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="todayEvents">
+        <![CDATA[
+        select * from EVENTS where DATE(EVENT_DATE) = DATE(NOW())
+        ]]>
+    </sql-query>
+
+    <sql-query name="todayEvents__count">
+        <![CDATA[
+        select count(*) from (select * from EVENTS where DATE(EVENT_DATE) = DATE(NOW())) wmTempTable
+        ]]>
+    </sql-query>
+</hibernate-mapping>

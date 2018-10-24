@@ -1,0 +1,138 @@
+<wm-page data-ng-controller="DashboardPageController" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1"> 
+            <wm-layoutgrid name="layoutgrid1"> 
+                <wm-gridrow name="gridrow1" padding=".5em"> 
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn1" horizontalalign="center" padding=".5em .5em .5em unset"> 
+                        <wm-tile name="tile1" class="bg-danger" backgroundcolor="#fc6767"> 
+                            <wm-container name="container1" padding=".5em"> 
+                                <wm-label name="label1" width="100%" caption="Registered Orgs" class="text-uppercase h4" margin="0em" color="#ffffff" fontsize="20"></wm-label> 
+                                <wm-label name="label3" width="100%" caption="This month" fontstyle="italic" class="h5" color="#ffffff" fontsize="15"></wm-label> 
+                                <wm-label name="label4" width="100%" caption="25" class="h3" fontweight="bold" margin="0px" color="#ffffff"></wm-label> 
+                                <wm-icon name="icon1" iconclass="fa fa-caret-up"></wm-icon> 
+                                <wm-label name="label5" caption="2.8%" class="h5" margin="0em .2em" color="#ffffff" fontsize="15"></wm-label> 
+                            </wm-container> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="3" horizontalalign="center" name="gridcolumn5" padding=".5em"> 
+                        <wm-tile name="tile3" class="bg-info" backgroundcolor="#5cb1f9"> 
+                            <wm-container name="container8" padding=".5em" color="#ffffff"> 
+                                <wm-label width="100%" caption="Volunteers" class="text-uppercase h4" name="label41" margin="0em" fontsize="20" color="#ffffff"></wm-label> 
+                                <wm-label width="100%" caption="This month" fontstyle="italic" class="h5" name="label43" fontsize="15" color="#ffffff"></wm-label> 
+                                <wm-label width="100%" caption="290" class="h3" name="label44" fontweight="bold" margin="0px" color="#ffffff"></wm-label> 
+                                <wm-icon iconclass="fa fa-caret-up" name="icon8"></wm-icon> 
+                                <wm-label caption="5%" class="h5" name="label45" margin="0em .2em" fontsize="15" color="#ffffff"></wm-label> 
+                            </wm-container> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="3" horizontalalign="center" name="gridcolumn6" padding=".5em"> 
+                        <wm-tile name="tile4" color="#ffffff" class="bg-warning" backgroundcolor="#e2c04d"> 
+                            <wm-container name="container9" padding=".5em"> 
+                                <wm-label width="100%" caption="Lives effected" class="text-uppercase h4" name="label46" margin="0em" fontsize="20" color="#ffffff"></wm-label> 
+                                <wm-label width="100%" caption="This month" fontstyle="italic" class="h5" name="label48" fontsize="15" color="#ffffff"></wm-label> 
+                                <wm-label width="100%" caption="56" class="h3" name="label49" fontweight="bold" margin="0px" color="#ffffff"></wm-label> 
+                                <wm-icon iconclass="fa fa-caret-up" name="icon9"></wm-icon> 
+                                <wm-label caption="12.3%" class="h5" name="label50" margin="0em .2em" fontsize="15" color="#ffffff"></wm-label> 
+                            </wm-container> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="3" horizontalalign="center" name="gridcolumn7" padding=".5em unset .5em .5em"> 
+                        <wm-tile name="tile5" color="#ffffff" class="bg-success" backgroundcolor="#4cd87a"> 
+                            <wm-container name="container10" padding=".5em"> 
+                                <wm-label width="100%" caption="Funds raised" class="text-uppercase h4" name="label51" margin="0em" fontsize="20" color="#ffffff"></wm-label> 
+                                <wm-label width="100%" caption="This month" fontstyle="italic" class="h5" name="label53" fontsize="15" color="#ffffff"></wm-label> 
+                                <wm-label width="100%" caption="$1270" class="h3" name="label54" fontweight="bold" margin="0px" color="#ffffff"></wm-label> 
+                                <wm-icon iconclass="fa fa-caret-up" name="icon10"></wm-icon> 
+                                <wm-label caption="7%" class="h5" name="label55" margin="0em .2em" fontsize="15" color="#ffffff"></wm-label> 
+                            </wm-container> 
+                        </wm-tile> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow8" padding="0em .5em"> 
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn13_1" horizontalalign="left" padding=".5em .5em .5em unset"> 
+                        <wm-panel class="panel-default" collapsible="false" showheader="true" name="panel5" title="Funds raised by MeForWe (in USD)" horizontalalign="center" borderwidth="0em" margin="0em" padding="1em 1em 1.5em 1em"> 
+                            <wm-chart type="Line" name="chart1" yaxislabeldistance="1" xaxislabel="Year" yaxislabel="Amount in USD" showlegend="false" xdigits="1" theme="Terrestrial" dataset="bind:Variables.staticVariable1.dataSet" xaxisdatakey="year" yaxisdatakey="amount"></wm-chart> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn14" horizontalalign="left" padding=".5em unset .5em .5em"> 
+                        <wm-panel class="panel-default" collapsible="false" showheader="true" name="panel4_1" title="Funds Breakdown(Year 2017)" borderwidth="0em" margin="0em" padding="1em"> 
+                            <wm-chart type="Pie" name="chart2" showlegend="false" donutratio="0.5" theme="Azure" dataset="bind:Variables.databaseVariable1.dataSet" yaxisdatakey="amountReceived" xaxisdatakey="orgName"></wm-chart> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow6"> 
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn16" padding=".5em"> 
+                        <wm-panel backgroundcolor="#fff" title="NEWS updates" show="true" class="panel-default" collapsible="false" showheader="true" name="panel6" borderwidth="0em" padding="0em" height="20em"> 
+                            <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="newsapiList1" dataset="bind:Variables.serviceVariable1.dataSet.articles" navigation="None"> 
+                                <wm-listtemplate layout="inline" name="listtemplate4"> 
+                                    <wm-container name="pictureContainer" class="media-left"> 
+                                        <wm-picture width="32pt" height="32pt" name="Picture" shape="circle" picturesource="bind:Variables.serviceVariable1.dataSet.articles.urlToImage || &quot;https://mainstreetashland.org/wp-content/uploads/2016/10/news.png&quot;" class="media-object"></wm-picture> 
+                                    </wm-container> 
+                                    <wm-container class="media-body" padding="unset unset unset 1.25em" name="container12"> 
+                                        <wm-label name="Name" class="media-heading pull-left" caption="bind:Variables.serviceVariable1.dataSet.articles.title" fontunit="em"></wm-label> 
+                                        <wm-label caption="bind:Variables.serviceVariable1.dataSet.articles.author" class="h5" margin="0px unset unset unset" name="JobTitle"></wm-label> 
+                                        <wm-label name="Content" caption="bind:Variables.serviceVariable1.dataSet.articles.description" class="p text-muted"></wm-label> 
+                                    </wm-container> 
+                                    <wm-container class="media-right" name="container13"></wm-container> 
+                                </wm-listtemplate> 
+                            </wm-list> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn17" padding=".5em"> 
+                        <wm-tabs name="tabs1" height="24em"> 
+                            <wm-tabpane name="tabpane1" title="Today"> 
+                                <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="executeTodayEventsList1" dataset="bind:Variables.serviceTodayEvents.dataSet" navigation="None"> 
+                                    <wm-listtemplate layout="inline" name="listtemplate3"> 
+                                        <wm-container name="pictureContainer" class="media-left"> 
+                                            <wm-icon name="icon6" iconsize="30px" iconclass="wi wi-event"></wm-icon> 
+                                        </wm-container> 
+                                        <wm-container class="media-body" padding="unset unset unset 1.25em" name="container9_1"> 
+                                            <wm-label name="Name" class="media-heading pull-left" caption="bind:Variables.serviceTodayEvents.dataSet.eventName" fontunit="em"></wm-label> 
+                                            <wm-label name="Time" caption="bind:Variables.serviceTodayEvents.dataSet.eventDate | toDate: 'dd-MMM-yyyy HH:mm:ss'" class="pull-right" margin="0px unset unset unset"></wm-label> 
+                                            <wm-label name="Content" caption="bind:Variables.serviceTodayEvents.dataSet.eventDesc" class="p text-muted"></wm-label> 
+                                        </wm-container> 
+                                        <wm-container class="media-right" name="container10_1"></wm-container> 
+                                    </wm-listtemplate> 
+                                </wm-list> 
+                            </wm-tabpane> 
+                            <wm-tabpane name="tabpane2" title="This month"> 
+                                <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="EventsList1" dataset="bind:Variables.MeforweEventsData.dataSet" navigation="None"> 
+                                    <wm-listtemplate layout="inline" name="listtemplate2_1"> 
+                                        <wm-container name="pictureContainer" class="media-left"> 
+                                            <wm-icon name="icon5" iconsize="30px" iconclass="wi wi-event"></wm-icon> 
+                                        </wm-container> 
+                                        <wm-container class="media-body" padding="unset unset unset 1.25em" name="container6"> 
+                                            <wm-label name="Name" class="media-heading pull-left" caption="bind:Variables.MeforweEventsData.dataSet.eventName" fontunit="em"></wm-label> 
+                                            <wm-label name="Time" caption="bind:Variables.MeforweEventsData.dataSet.data[$i].eventDate | toDate: 'dd-MMM-yyyy HH:mm:ss'" class="pull-right" margin="0px unset unset unset"></wm-label> 
+                                            <wm-label name="Content" caption="bind:Variables.MeforweEventsData.dataSet.eventDesc" class="p text-muted" height="50px"></wm-label> 
+                                        </wm-container> 
+                                        <wm-container class="media-right" name="container7"></wm-container> 
+                                    </wm-listtemplate> 
+                                </wm-list> 
+                            </wm-tabpane> 
+                        </wm-tabs> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn18" padding=".5em"> 
+                        <wm-panel class="panel-default" collapsible="false" showheader="true" title="Featured stories" name="panel8" borderwidth="0px" margin="0px" padding="1em" height="20em"> 
+                            <wm-panel iconclass="wi wi-account-circle" autoclose="outsideClick" title="Kelly's Story" name="panel7"> 
+                                <wm-panel-footer name="panel_footer2"></wm-panel-footer> 
+                                <wm-label padding="unset 0.5em" caption="Kelly have been quite successful in their restaurant business. Kelly wanted to reduce the wastage during various catering events but in vain. Our platform connected her with various underprivileged homes where could drop the food when excess." name="label23_1"></wm-label> 
+                            </wm-panel> 
+                            <wm-panel iconclass="wi wi-account-circle" autoclose="outsideClick" title="Michael's Story" name="panel8_1"> 
+                                <wm-panel-footer name="panel_footer3"></wm-panel-footer> 
+                                <wm-label padding="unset 0.5em" caption="Being a top-tier employee at a leading software firm, Michael wanted to donate a portion of his income to girl education. Our platform guided him to various organizations in under-privileged countries where he changed the lives of 24 girls." name="label24"></wm-label> 
+                            </wm-panel> 
+                            <wm-panel iconclass="wi wi-account-circle" autoclose="outsideClick" title="John's Story" name="panel6_1"> 
+                                <wm-panel-footer name="panel_footer1"></wm-panel-footer> 
+                                <wm-label padding="unset 0.5em" name="label23" caption="John works as a technical manager and he wanted to give back to the society which has been good to him all these years. Our platform connected him with various shelter homes where he could spend his weekends tutoring students towards greater excellence."></wm-label> 
+                            </wm-panel> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>

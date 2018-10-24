@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.meforwe.meforwe.controller,com.meforwe.meforwe.service,com.meforwe.meforwe.dao"/>
+    <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>
+                    classpath:meforwe.properties
+                </value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+
+    <bean id="meforweHikariConfig" class="com.zaxxer.hikari.HikariConfig">
+        <property name="jdbcUrl" value="${meforwe.url}"/>
+        <property name="driverClassName" value="${meforwe.driverClass}"/>
+        <property name="username" value="${meforwe.username}"/>
+        <property name="password" value="${meforwe.password}"/>
+        <property name="maximumPoolSize" value="${meforwe.maxPoolSize}"/>
+        <property name="minimumIdle" value="${meforwe.minPoolSize}"/>
+        <property name="connectionTimeout" value="30000" />
+        <property name="validationTimeout" value="5000" />
+        <property name="idleTimeout" value="600000" />
+        <property name="maxLifetime" value="1800000" />
+        <property name="initializationFailTimeout" value="-1" />
+        <property name="leakDetectionThreshold" value="120000" />
+        <property name="registerMbeans" value="false" />
+    </bean>
+
+    <bean id="meforweWMManagedDataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close" lazy-init="true">
+        <constructor-arg ref="meforweHikariConfig"/>
+    </bean>
+
+    <bean id="meforweEntityInterceptor" class="com.wavemaker.runtime.data.interceptors.WMEntityInterceptor"/>
+
+    <bean id="meforweSessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="meforweDataSource"/>
+        <property name="packagesToScan" value="com.meforwe.meforwe"/>
+        <property name="entityInterceptor" ref="meforweEntityInterceptor"/>
+        <property name="entityTypeFilters" ref="nonHistoryEntitiesFilter"/>
+        <property name="mappingResources">
+            <list>
+                <value>
+                meforwe-queries.hbm.xml
+                </value>
+            </list>
+        </property>
+
+        <property name="hibernateProperties" ref="meforweHibernateProperties"/>
+    </bean>
+    <bean id="meforweTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="meforweSessionFactory"/>
+        <property name="defaultTimeout" value="${meforwe.transactionTimeout}"/>
+    </bean>
+    <bean id="meforweTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+        <property name="sessionFactory" ref="meforweSessionFactory"/>
+    </bean>
+
+    <bean id="meforweWMQueryExecutor" class="com.wavemaker.runtime.data.dao.query.WMQueryExecutorImpl">
+        <property name="template" ref="meforweTemplate"/>
+    </bean>
+    <bean id="meforweWMProcedureExecutor" class="com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutorImpl">
+        <property name="template" ref="meforweTemplate"/>
+        <property name="serviceId" value="meforwe"/>
+    </bean>
+
+    <bean id="meforweHibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="properties">
+            <props>
+                <prop key="hibernate.dialect">
+                ${meforwe.dialect}
+                </prop>
+                <prop key="hibernate.show_sql">
+                    false
+                </prop>
+                <prop key="hibernate.globally_quoted_identifiers">
+                    false
+                </prop>
+                <prop key="hibernate.hbm2ddl.auto">
+                ${meforwe.hbm2ddl}
+                </prop>
+                <prop key="hibernate.temp.use_jdbc_metadata_defaults">
+                    false
+                </prop>
+                <prop key="hibernate.schema_update.unique_constraint_strategy">
+                    skip
+                </prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="meforwePageableHandlerMethodResolver" class="com.wavemaker.runtime.resolver.WMPageableHandlerMethodArgumentResolver" >
+        <property name="pageParameterName" value="page"/>
+        <property name="sizeParameterName" value="size"/>
+        <property name="oneIndexedParameters" value="true"/>
+        <property name="maxPageSize" value="${meforwe.maxPageSize}"/>
+        <property name="fallbackPageable">
+            <bean  class="org.springframework.data.domain.PageRequest">
+                <constructor-arg  value="0"/>
+                <constructor-arg  value="20"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="meforweDataSource" class="com.wavemaker.runtime.data.datasource.WMDataSource">
+        <property name="dataSourceType" value="${meforwe.dataSourceType}"/>
+        <property name="jndiName" value="${meforwe.jndiName}"/>
+        <property name="serviceId" value="meforwe"/>
+    </bean>
+
+
+    <tx:annotation-driven/>
+
+</beans>
+
